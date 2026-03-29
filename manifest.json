@@ -5,10 +5,33 @@
   "description": "Captures browser URLs for accurate time tracking and productivity monitoring",
   "permissions": [
     "tabs",
-    "activeTab"
+    "activeTab",
+    "storage",
+    "alarms"
   ],
   "host_permissions": [
-    "http://localhost:8765/*"
+    "http://127.0.0.1:8765/*",
+    "http://127.0.0.1:8766/*",
+    "http://127.0.0.1:8767/*",
+    "http://127.0.0.1:8768/*",
+    "http://127.0.0.1:8769/*",
+    "http://127.0.0.1:8770/*",
+    "http://127.0.0.1:8771/*",
+    "http://127.0.0.1:8772/*",
+    "http://127.0.0.1:8773/*",
+    "http://127.0.0.1:8774/*",
+    "http://127.0.0.1:8775/*",
+    "ws://127.0.0.1:8765/*",
+    "ws://127.0.0.1:8766/*",
+    "ws://127.0.0.1:8767/*",
+    "ws://127.0.0.1:8768/*",
+    "ws://127.0.0.1:8769/*",
+    "ws://127.0.0.1:8770/*",
+    "ws://127.0.0.1:8771/*",
+    "ws://127.0.0.1:8772/*",
+    "ws://127.0.0.1:8773/*",
+    "ws://127.0.0.1:8774/*",
+    "ws://127.0.0.1:8775/*"
   ],
   "background": {
     "service_worker": "background.js"

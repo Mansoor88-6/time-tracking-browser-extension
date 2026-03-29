@@ -14,7 +14,7 @@ This Chrome extension captures actual URLs from browser tabs and sends them to t
 
 - **Tab Monitoring**: Automatically monitors when you switch tabs or navigate to new pages
 - **Periodic Polling**: Polls active tabs every 5 seconds as a backup mechanism
-- **Local Communication**: Sends URL updates to the agent running on `localhost:8765`
+- **Local Communication**: POSTs browser events to the agent on `127.0.0.1` at ports **8765–8775** (auto-discovered; see `background.js`)
 - **Privacy**: Only sends URLs to the local agent, never to external servers
 
 ## Requirements
@@ -25,11 +25,7 @@ This Chrome extension captures actual URLs from browser tabs and sends them to t
 
 ## Configuration
 
-The extension connects to the agent server at `http://localhost:8765/api/v1/url-update`. If your agent is configured to use a different port, you'll need to update `background.js`:
-
-```javascript
-const AGENT_SERVER_URL = 'http://localhost:YOUR_PORT/api/v1/url-update';
-```
+The extension calls `GET /api/v1/health` and `POST /api/v1/browser-event` on `127.0.0.1` within the allowed port range (see `manifest.json` host_permissions).
 
 ## Troubleshooting
 
